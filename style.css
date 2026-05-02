@@ -179,3 +179,48 @@ body {
   cursor: pointer;
   flex-shrink: 0;
 }
+
+/* FULLSCREEN GALERIJA */
+.fullscreen-gallery {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-gallery img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-gallery {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.gallery-left {
+  left: 20px;
+}
+
+.gallery-right {
+  right: 20px;
+}
