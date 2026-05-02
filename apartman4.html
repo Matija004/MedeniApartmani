@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartman</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* TOP */
+.top {
+  background: #111;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* STRELICE */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
+
+/* THUMBNAILS */
+.thumbs {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  overflow-x: auto;
+}
+
+.thumbs img {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icon {
+  background: #eee;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* BOOKING */
+.booking {
+  background: #1877F2;
+  text-align: center;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 25px;
+}
+
+.booking a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 26px;
+  margin: 0 10px;
+}
+
+/* FULLSCREEN GALERIJA */
+.fullscreen-gallery {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-gallery img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-gallery {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.gallery-left {
+  left: 20px;
+}
+
+.gallery-right {
+  right: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+  <div>Apartman</div>
+  <a href="index.html">← Nazad</a>
+</div>
+
+<!-- GORNJI SLIDER -->
+<div class="slider">
+
+  <div class="slide active">
+    <img src="slike/Nas/1.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/2.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/3.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/4.JPG">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/5.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/6.JPG">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/7.JPG">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/8.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/9.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/10.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Nas/11.jpg">
+  </div>
+
+  <button class="arrow left" onclick="change(-1)">&#10094;</button>
+  <button class="arrow right" onclick="change(1)">&#10095;</button>
+
+</div>
+
+<!-- SLIKE DOLE -->
+<div class="thumbs">
+  <img src="slike/Nas/1.jpg" onclick="openGallery(0)">
+  <img src="slike/Nas/2.jpg" onclick="openGallery(1)">
+  <img src="slike/Nas/3.jpg" onclick="openGallery(2)">
+  <img src="slike/Nas/4.JPG" onclick="openGallery(3)">
+  <img src="slike/Nas/5.jpg" onclick="openGallery(4)">
+  <img src="slike/Nas/6.JPG" onclick="openGallery(5)">
+  <img src="slike/Nas/7.JPG" onclick="openGallery(6)">
+  <img src="slike/Nas/8.jpg" onclick="openGallery(7)">
+  <img src="slike/Nas/9.jpg" onclick="openGallery(8)">
+  <img src="slike/Nas/10.jpg" onclick="openGallery(9)">
+  <img src="slike/Nas/11.jpg" onclick="openGallery(10)">
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="box">
+    <h2>Ime apartmana</h2>
+    <p>Moderan i udoban apartman na odličnoj lokaciji.</p>
+
+    <div class="icons">
+      <div class="icon">📶 WiFi</div>
+      <div class="icon">❄ Klima</div>
+      <div class="icon">🛏 Krevet</div>
+      <div class="icon">🚿 Kupatilo</div>
+      <div class="icon">🍳 Kuhinja</div>
+    </div>
+
+    <div class="booking">
+      <a href="https://www.facebook.com/medeni.apartman">Rezerviši odmah</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+
+  <div>
+    <h3>Kontakt</h3>
+    <p>Telefon: +385 91 144 4471</p>
+    <p>Email: medenisrima@gmail.com</p>
+  </div>
+
+  <div>
+    <h3>Društvene mreže</h3>
+    <div class="social-icons">
+      <a href="viber://chat?number=%2B385911444471"><i class="fab fa-viber"></i></a>
+      <a href="https://www.facebook.com/medeni.apartman" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/385911444471"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FULLSCREEN GALERIJA -->
+<div class="fullscreen-gallery" id="gallery">
+
+  <span class="close-gallery" onclick="closeGallery()">
+    &times;
+  </span>
+
+  <button class="gallery-arrow gallery-left"
+          onclick="galleryChange(-1)">
+    &#10094;
+  </button>
+
+  <img id="galleryImage">
+
+  <button class="gallery-arrow gallery-right"
+          onclick="galleryChange(1)">
+    &#10095;
+  </button>
+
+</div>
+
+<script>
+/* GORNJI SLIDER */
+const slides = document.querySelectorAll(".slide");
+let current = 0;
+
+let interval = setInterval(next, 3000);
+
+function show(i){
+  slides.forEach(slide => {
+    slide.classList.remove("active");
+  });
+
+  slides[i].classList.add("active");
+}
+
+function next(){
+  current = (current + 1) % slides.length;
+  show(current);
+}
+
+function change(dir){
+  clearInterval(interval);
+
+  current += dir;
+
+  if(current < 0){
+    current = slides.length - 1;
+  }
+
+  if(current >= slides.length){
+    current = 0;
+  }
+
+  show(current);
+
+  interval = setInterval(next, 3000);
+}
+
+/* DONJA FULLSCREEN GALERIJA */
+const galleryImages = [
+  "slike/Nas/1.jpg",
+  "slike/Nas/2.jpg",
+  "slike/Nas/3.jpg",
+  "slike/Nas/4.JPG",
+  "slike/Nas/5.jpg",
+  "slike/Nas/6.JPG",
+  "slike/Nas/7.JPG",
+  "slike/Nas/8.jpg",
+  "slike/Nas/9.jpg",
+  "slike/Nas/10.jpg",
+  "slike/Nas/11.jpg"
+];
+
+let galleryCurrent = 0;
+
+function openGallery(index){
+  galleryCurrent = index;
+
+  document.getElementById("gallery").style.display = "flex";
+
+  document.getElementById("galleryImage").src =
+    galleryImages[index];
+}
+
+function closeGallery(){
+  document.getElementById("gallery").style.display = "none";
+}
+
+function galleryChange(dir){
+  galleryCurrent += dir;
+
+  if(galleryCurrent < 0){
+    galleryCurrent = galleryImages.length - 1;
+  }
+
+  if(galleryCurrent >= galleryImages.length){
+    galleryCurrent = 0;
+  }
+
+  document.getElementById("galleryImage").src =
+    galleryImages[galleryCurrent];
+}
+</script>
+
+</body>
+</html>

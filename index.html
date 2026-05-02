@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartmani</title>
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div><strong>Apartmani</strong></div>
+  <div class="nav-links">
+    <a href="#">Početna</a>
+    <a href="#apartmani">Apartmani</a>
+    <a href="#lokacija">Kako do nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="slider">
+
+  <div class="slide">
+    <img src="slike/Ostalo/1.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/2.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/3.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/4.JPG">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/5.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/6.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/7.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/8.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/9.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/10.jpg">
+  </div>
+
+  <div class="slide active">
+    <img src="slike/Ostalo/11.JPG">
+  </div>
+
+  <div class="slide">
+    <img src="slike/Ostalo/12.jpg">
+  </div>
+
+  <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+
+</div>
+
+<!-- SLIKE DOLE -->
+<div class="thumbs">
+  <img src="slike/Ostalo/1.jpg" onclick="openGallery(0)">
+  <img src="slike/Ostalo/2.jpg" onclick="openGallery(1)">
+  <img src="slike/Ostalo/3.jpg" onclick="openGallery(2)">
+  <img src="slike/Ostalo/4.JPG" onclick="openGallery(3)">
+  <img src="slike/Ostalo/5.jpg" onclick="openGallery(4)">
+  <img src="slike/Ostalo/6.jpg" onclick="openGallery(5)">
+  <img src="slike/Ostalo/7.jpg" onclick="openGallery(6)">
+  <img src="slike/Ostalo/8.jpg" onclick="openGallery(7)">
+  <img src="slike/Ostalo/9.jpg" onclick="openGallery(8)">
+  <img src="slike/Ostalo/10.jpg" onclick="openGallery(9)">
+  <img src="slike/Ostalo/11.JPG" onclick="openGallery(10)">
+  <img src="slike/Ostalo/12.jpg" onclick="openGallery(11)">
+</div>
+
+<!-- APARTMANI -->
+<div class="grid" id="apartmani">
+
+  <a href="apartman1.html" class="card">
+    <img src="./slike/Ostalo/2.JPG">
+    <div class="card-content"><h3>Apartman 1</h3><p>Kratak opis</p></div>
+  </a>
+
+  <a href="apartman2.html" class="card">
+    <img src="./slike/GoreLevo/2.JPG">
+    <div class="card-content"><h3>Apartman 2</h3><p>Kratak opis</p></div>
+  </a>
+
+  <a href="apartman3.html" class="card">
+    <img src="./slike/Ostalo/2.JPG">
+    <div class="card-content"><h3>Apartman 3</h3><p>Kratak opis</p></div>
+  </a>
+
+  <a href="apartman4.html" class="card">
+    <img src="./slike/Nas/6.JPG">
+    <div class="card-content"><h3>Apartman 4</h3><p>Kratak opis</p></div>
+  </a>
+
+  <a href="apartman5.html" class="card">
+    <img src="./slike/Srednji/3.JPG">
+    <div class="card-content"><h3>Apartman 5</h3><p>Kratak opis</p></div>
+  </a>
+
+  <a href="apartman6.html" class="card">
+    <img src="./slike/Veliki/5.JPG">
+    <div class="card-content"><h3>Apartman 6</h3><p>Kratak opis</p></div>
+  </a>
+
+</div>
+
+<!-- KAKO DO NAS -->
+<div class="location-section" id="lokacija">
+
+  <h2>Kako do nas</h2>
+  <p>Naša lokacija na mapi:</p>
+
+  <div class="map-container">
+
+    <iframe 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.1636534719187!2d15.795088176274513!3d43.748698246248956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13352809c44d5beb%3A0x91c5ebaf7a0f1182!2zU3JpbWEgViAxNCwgMjIyMTEsIFNyaW1hLCDQpdGA0LLQsNGC0YHQutCw!5e0!3m2!1ssr-Latn!2srs!4v1776777254275!5m2!1ssr-Latn!2srs"
+       width="100%"
+       height="350"
+       style="border:0;"
+       loading="lazy">
+     </iframe>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="kontakt">
+
+  <div>
+    <h3>Kontakt</h3>
+    <p>Telefon: +385 91 144 4471</p>
+    <p>Email: medenisrima@gmail.com</p>
+  </div>
+
+  <div>
+    <h3>Društvene mreže</h3>
+    <div class="social-icons">
+      <a href="viber://chat?number=%2B385911444471"><i class="fab fa-viber"></i></a>
+      <a href="https://www.facebook.com/medeni.apartman" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/385911444471"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>Pošalji poruku</h3>
+
+    <form id="kontaktForm">
+      <input type="text" name="ime" placeholder="Ime" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="poruka" rows="4" placeholder="Poruka" required></textarea>
+      <button type="submit">Pošalji</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
+</div>
+
+<!-- FULLSCREEN GALERIJA -->
+<div class="fullscreen-gallery" id="gallery">
+
+  <span class="close-gallery" onclick="closeGallery()">
+    &times;
+  </span>
+
+  <button class="gallery-arrow gallery-left"
+          onclick="galleryChange(-1)">
+    &#10094;
+  </button>
+
+  <img id="galleryImage">
+
+  <button class="gallery-arrow gallery-right"
+          onclick="galleryChange(1)">
+    &#10095;
+  </button>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
